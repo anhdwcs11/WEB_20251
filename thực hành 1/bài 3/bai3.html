@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài 3 – Cửa hàng Giày Bóng Đá (Hoàn chỉnh)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1>Cửa hàng Giày Bóng Đá 36</h1>
+      <nav aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#san-pham">Sản phẩm</a></li>
+          <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="gioi-thieu" class="container intro">
+      <h2>Giới thiệu</h2>
+      <p class="muted">Chuyên giày bóng đá đinh TF/FG chính hãng, đủ size. Có khắc tên &amp; số áo theo yêu cầu.</p>
+    </section>
+
+    <section id="tools" class="container tools">
+      <div class="search">
+        <label for="searchInput" class="sr-only">Tìm kiếm sản phẩm</label>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." />
+        <button id="searchBtn" type="button" class="btn primary">Tìm</button>
+      </div>
+      
+      <button id="addProductBtn" type="button" class="btn accent">➕ Thêm sản phẩm</button>
+      
+    </section>
+<form id="addProductForm" class="panel hidden" autocomplete="off">
+  <h3>Thêm sản phẩm mới</h3>
+
+  <label for="newName">Tên sản phẩm</label>
+  <input type="text" id="newName" required placeholder="Tên giày (ví dụ: Tiempo TF)"/>
+
+  <label for="newPrice">Giá (₫)</label>
+  <input type="number" id="newPrice" min="1" step="1" required placeholder="VD: 1590000"/>
+
+
+  <label for="newImg">Ảnh sản phẩm (URL .jpg/.jpeg)</label>
+  <input
+    type="url"
+    id="newImg"
+    placeholder="https://.../ten-anh.jpg"
+    pattern="https?://.*\.(jpe?g)$"
+    title="Nhập URL kết thúc bằng .jpg hoặc .jpeg (http/https)"
+    inputmode="url"
+  />
+
+  <label for="newDesc">Mô tả</label>
+  <textarea id="newDesc" rows="3" placeholder="Mô tả ngắn (tùy chọn)"></textarea>
+
+  <div class="actions">
+    <button type="submit" class="btn primary">Thêm</button>
+    <button type="button" id="cancelBtn" class="btn">Hủy</button>
+  </div>
+  <p id="errorMsg" class="error" role="alert" aria-live="polite"></p>
+</form>
+
+    <section id="san-pham" class="container">
+      <h2>Giày nổi bật</h2>
+      <div id="product-list" class="grid" role="list">
+        <article class="product-item" role="listitem">
+          <img src="https://product.hstatic.net/200000278317/product/nike-mercurial-vapor-13-pro-tf-_-at8004-606-_-do-hong-den-j13w8_5ac0bb8732e342b7b6ee5343436b5594.jpg" alt="Mercurio Veloce TF" loading="lazy" />
+          <h3 class="product-name">Mercurio Veloce TF</h3>
+          <p class="muted">Đế TF cho sân cỏ nhân tạo, ôm chân, trợ lực sút.</p>
+          <p class="price">Giá: 1.250.000₫</p>
+        </article>
+
+        <article class="product-item" role="listitem">
+          <img src="https://product.hstatic.net/200000278317/product/iay-da-banh-nike-zoom-mercurial-vapor-15-pro-tf-dj5605-605-hong-xanh-1_90040ca4d4684d16b32e17c4dc577eb7.jpg" alt="Preda Control FG" loading="lazy" />
+          <h3 class="product-name">Preda Control FG</h3>
+          <p class="muted">Đế FG thi đấu sân 11, bề mặt upper bám bóng tốt.</p>
+          <p class="price">Giá: 2.150.000₫</p>
+        </article>
+
+        <article class="product-item" role="listitem">
+          <img src="https://cdn.hstatic.net/products/200000278317/giay-da-bong-nike-phantom-6-low-academy-tf-hq2325-800-vang-chanh-den-1_58049071fc184b628307ccf8c0b91207_master.jpg" alt="Phantom Agility TF" loading="lazy" />
+          <h3 class="product-name">Phantom Agility TF</h3>
+          <p class="muted">Dáng rộng dễ đi, cổ thun ôm mắt cá, linh hoạt đổi hướng.</p>
+          <p class="price">Giá: 1.490.000₫</p>
+        </article>
+      </div>
+
+      
+    </section>
+
+    <!-- Form Liên hệ / Đặt hàng -->
+    <section id="lien-he" class="container" aria-labelledby="contact-title">
+      <h2 id="contact-title">Liên hệ</h2>
+      <form action="#" method="POST" class="form-order">
+        <h3>Đặt hàng</h3>
+
+        <label for="fullname">Họ và tên:</label>
+        <input type="text" id="fullname" placeholder="Nguyễn Văn A" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="ban@example.com" required>
+
+        <label for="message">Nội dung:</label>
+        <textarea id="message" rows="4" placeholder="Mình muốn hỏi size, màu hoặc khắc tên..."></textarea>
+
+        <button type="submit">Gửi</button>
+      </form>
+    </section>
+
+  <footer>
+    <div class="container">
+      <small>&copy; 2025 Cửa hàng Giày Bóng Đá 36 — 456 Đường Sân Cỏ, Hà Nội</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

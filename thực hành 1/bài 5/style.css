@@ -1,0 +1,161 @@
+/* ====== Bài 3 – Cửa hàng Giày Bóng Đá (style.css) [v2] ====== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+:root{
+  --bg: #0b1a28;
+  --card: #0f2436;
+  --ink: #e5eef7;
+  --muted: #9fb3c8;
+  --line: #1b3348;
+  --brand: #00bcd4;
+  --brand-2:#28e0ae;
+}
+
+body{
+  background: linear-gradient(180deg, var(--bg), #07121c 60%);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 16px;
+}
+.muted { color: var(--muted); }
+
+/* Header */
+header{
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(7,18,28,.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+header h1{ font-size: 1.35rem; margin: 8px 0; color: #fff; }
+nav ul{ list-style:none; display:flex; gap:18px; margin:0; padding:0; }
+nav a{ color: var(--ink); text-decoration:none; padding:8px 10px; border-radius:8px; }
+nav a:hover{ background: rgba(0,188,212,.12); }
+
+/* Intro & tools */
+.intro{ margin-top: 10px; }
+.tools{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.search{ display:flex; gap:8px; align-items:center; }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip: rect(0,0,0,0); border:0; }
+
+/* Buttons & inputs */
+.btn{ padding:10px 14px; border:1px solid var(--line); border-radius:10px; background:#10293d; color:var(--ink); cursor:pointer; }
+.btn.primary{ background:#0fb7ca; border-color:#0b8ea0; color:#03141d; font-weight:700; }
+.btn.accent{ background:#0fb7ca; border-color:#0b8ea0; color:#03141d; font-weight:700; }
+input[type="text"], input[type="number"], input[type="email"], input[type="url"], textarea{
+  width: 280px; max-width: 100%; padding:10px 12px; border:1px solid #26445c; border-radius:10px; background:#0b1a28; color:var(--ink);
+}
+input::placeholder, textarea::placeholder{ color:#86a3bb; }
+input:focus, textarea:focus{ outline:none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(0,188,212,.18); }
+
+/* Panel */
+.panel{ background: linear-gradient(180deg, var(--card), #0b1f2f); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:0 2px 6px rgba(0,0,0,.25); }
+.actions{ display:flex; gap:10px; margin-top:10px; }
+.error{ color:#ff6b6b; min-height:1.25em; text-align:center; }
+
+/* Grid products */
+.grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+.product-item{
+  background: linear-gradient(180deg, var(--card), #0b1f2f);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .2s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  text-align: left;
+}
+.product-item:hover{ transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.35); border-color:#20435c; }
+.product-item img{
+  width:100%; max-width: 240px; aspect-ratio: 4 / 3; object-fit: cover; border-radius:12px; border:1px solid var(--line); background:#07121c; margin: 4px 0 8px;
+}
+.product-item h3{ margin: 4px 0 6px; font-size: 1.06rem; }
+.price{ font-weight:800; color: var(--brand-2); }
+
+/* Hidden form utility */
+.hidden{ display:none; }
+
+/* Add form size/center */
+#addProductBtn{ display:block; margin: 10px auto; }
+#addProductForm{ width: 400px; max-width: 100%; margin: 20px auto; }
+#addProductForm h3{ margin: 0 0 8px; }
+#addProductForm label{ display:block; margin-top: 10px; }
+
+/* Trường URL ảnh .jpg/.jpeg trong form thêm sản phẩm */
+#addProductForm input[type="url"]{ border-color: #2a6a82; }
+#addProductForm input[type="url"]::placeholder{ color:#89b4cc; }
+
+/* Liên hệ / Đặt hàng */
+#lien-he .form-order{
+  width: 400px; max-width: 100%;
+  margin: 20px auto;
+  background: linear-gradient(180deg, var(--card), #0b1f2f);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  display:flex; flex-direction:column; gap:10px;
+}
+#lien-he .form-order h3{
+  text-align: center; margin: 0 0 12px;
+}
+#lien-he .form-order label{
+  display: block; margin-top: 6px;
+}
+#lien-he .form-order input,
+#lien-he .form-order textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #26445c;
+  border-radius: 10px;
+  background: #0b1a28;
+  color: var(--ink);
+  outline: none;
+  margin-top: 4px;
+}
+#lien-he .form-order input::placeholder,
+#lien-he .form-order textarea::placeholder{
+  color: #86a3bb;
+}
+#lien-he .form-order input:focus,
+#lien-he .form-order textarea:focus{
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(0,188,212,.18);
+}
+#lien-he .form-order button[type="submit"]{
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #0b8ea0;
+  background: #0fb7ca;
+  color: #03141d;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+}
+#lien-he .form-order button[type="submit"]:hover{
+  background: #11c8de; transform: translateY(-1px);
+}
+
+/* Footer */
+footer{ margin-top: 42px; background:#07121c; color:#9fb3c8; border-top:1px solid var(--line); }
+footer .container{ text-align:center; padding: 16px; }
+
+/* Responsive */
+@media (max-width: 900px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px){
+  .header-inner{ flex-direction: column; align-items: flex-start; gap: 8px; }
+  nav ul{ flex-wrap: wrap; }
+  .grid{ grid-template-columns: 1fr; }
+  input[type="text"], input[type="number"], input[type="email"], input[type="url"], textarea{ width: 100%; }
+}

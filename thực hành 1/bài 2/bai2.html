@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 1 – Cửa hàng Giày Bóng Đá (HTML semantic + Form)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Cửa hàng Giày Bóng Đá 36</h1>
+      <nav aria-label="Điều hướng chính">
+        <ul>
+          <li><a href="#gioi-thieu">Giới thiệu</a></li>
+          <li><a href="#san-pham">Sản phẩm</a></li>
+          <li><a href="#lien-he">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="gioi-thieu" class="container">
+      <h2>Giới thiệu</h2>
+      <p class="muted">Chuyên giày bóng đá đinh TF/FG chính hãng.</p>
+    </section>
+  <button id="addProductBtn" type="button">➕ Thêm sản phẩm</button>
+  <form id="addProductForm" class="hidden">
+  <h3>Thêm sản phẩm mới</h3>
+
+  <label for="newName">Tên sản phẩm</label>
+  <input type="text" id="newName" placeholder="Tên giày..." required>
+
+  <label for="newPrice">Giá (₫)</label>
+  <input type="number" id="newPrice" min="1" placeholder="VD: 1200000" required>
+
+  <button type="submit">Thêm</button>
+  <button type="button" id="cancelBtn">Hủy</button>
+</form>
+    <section id="san-pham" class="container">
+      <h2>Giày nổi bật</h2>
+
+      <!-- Dùng <article> cho từng sản phẩm -->
+      <div class="grid" role="list">
+        <article class="item" role="listitem">
+          <h3>Mercurio Veloce TF</h3>
+          <img src="https://product.hstatic.net/200000278317/product/nike-mercurial-vapor-13-pro-tf-_-at8004-606-_-do-hong-den-j13w8_5ac0bb8732e342b7b6ee5343436b5594.jpg" alt="product2" width = "150px">
+          <p class="muted">Đế TF cho sân cỏ nhân tạo, ôm chân, trợ lực sút.</p>
+          <p class="price">Giá: 1.250.000₫</p>
+          <button onclick = "add()">Thêm vào giỏ hàng</button>
+          <button onclick = "by()">Mua ngay</button>
+        </article>
+
+        <article role="listitem">
+          <h3>Preda Control FG</h3>
+          <img src="https://product.hstatic.net/200000278317/product/iay-da-banh-nike-zoom-mercurial-vapor-15-pro-tf-dj5605-605-hong-xanh-1_90040ca4d4684d16b32e17c4dc577eb7.jpg" alt="Phantom GT2 FG" width = "150px">
+          <p class="muted">Đế FG thi đấu sân 11, bề mặt upper bám bóng tốt.</p>
+          <p class="price">Giá: 2.150.000₫</p>
+          <button onclick = "add()">Thêm vào giỏ hàng</button>
+          <button onclick = "by()">Mua ngay</button>
+        </article>
+
+        <article role="listitem">
+          <h3>Phantom Agility TF</h3>
+          <img src="https://cdn.hstatic.net/products/200000278317/giay-da-bong-nike-phantom-6-low-academy-tf-hq2325-800-vang-chanh-den-1_58049071fc184b628307ccf8c0b91207_master.jpg" alt="Giày Phantom Agility TF màu đen \đỏ"  width="150" height="100">
+          
+          <p class="muted">Dáng rộng dễ đi, cổ thun ôm mắt cá, linh hoạt đổi hướng.</p>
+          <p class="price">Giá: 1.490.000₫</p>
+          <button onclick = "add()">Thêm vào giỏ hàng</button>
+          <button onclick = "by()">Mua ngay</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="lien-he" class="container" aria-labelledby="contact-title">
+      <h2 id="contact-title">Liên hệ</h2>
+    <form action="#" method="POST" clas ="form-order">
+      <h3>Đặt hàng</h3>
+      <label for="fullname">Họ và tên:</label>
+      <input type="text" name="Sản phẩm" >
+      <label for="email">Email:</label>
+      <input type="email">
+      <label for="textarea">Nội dung</label>
+      <input type="area" >
+      <button  type="submit">Gửi</button>
+    </form>
+    </section>  
+    
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>&copy; 2025 Cửa hàng Giày Bóng Đá 36 — 456 Đường Sân Cỏ, Hà Nội</small>
+    </div>
+  </footer>
+
+<script src = "script.js">
+
+</script>
+
+</body>
+</html>
