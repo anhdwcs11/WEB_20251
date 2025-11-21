@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div>
+        <h1>User Manager</h1>
+        <p class="subtitle">CRUD powered by jsonplaceholder.typicode.com/users</p>
+      </div>
+      <div class="message" id="message"></div>
+    </header>
+
+    <div class="controls">
+      <div class="search">
+        <span aria-hidden="true">&#128269;</span>
+        <input id="searchInput" type="search" placeholder="Search by name..." />
+      </div>
+      <button id="reloadBtn" class="ghost" type="button">Reload</button>
+    </div>
+
+    <div class="panel">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody">
+          <tr><td colspan="4">Loading users...</td></tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <div class="pagination-info" id="paginationInfo">Page 1 of 1</div>
+        <div class="actions">
+          <button id="prevPage" class="ghost" type="button">Prev</button>
+          <button id="nextPage" class="ghost" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top: 14px;">
+      <h3 style="margin:0 0 6px 0;">Add User</h3>
+      <form id="createForm">
+        <div class="field">
+          <label for="createName">Name</label>
+          <input id="createName" name="name" required />
+        </div>
+        <div class="field">
+          <label for="createEmail">Email</label>
+          <input id="createEmail" name="email" type="email" required />
+        </div>
+        <div class="field">
+          <label for="createPhone">Phone</label>
+          <input id="createPhone" name="phone" required />
+        </div>
+        <button class="primary" type="submit">Create</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="editModal">
+    <div class="modal-content">
+      <header>
+        <h3>Edit User</h3>
+        <p class="subtitle">Update details and save changes</p>
+      </header>
+      <form id="editForm">
+        <div class="field">
+          <label for="editName">Name</label>
+          <input id="editName" name="name" required />
+        </div>
+        <div class="field">
+          <label for="editEmail">Email</label>
+          <input id="editEmail" name="email" type="email" required />
+        </div>
+        <div class="field">
+          <label for="editPhone">Phone</label>
+          <input id="editPhone" name="phone" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="ghost" id="closeEdit">Cancel</button>
+          <button class="primary" type="submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
