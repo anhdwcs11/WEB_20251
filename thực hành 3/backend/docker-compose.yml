@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: student-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongodbdata:
+    driver: local

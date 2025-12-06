@@ -1,0 +1,239 @@
+:root {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1f2a44;
+  background: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 12% 18%, rgba(65, 140, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(255, 196, 112, 0.18), transparent 30%),
+    #f5f7fb;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.page {
+  width: min(1100px, 100%);
+  color: inherit;
+}
+
+.hero {
+  background: linear-gradient(135deg, #ffffff, #f1f5ff);
+  border: 1px solid rgba(31, 42, 68, 0.08);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(22, 34, 66, 0.12);
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2d6cdf;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 6px 0 10px;
+  font-size: 2rem;
+  color: #14213d;
+}
+
+.muted {
+  margin: 0;
+  color: #5a6885;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 12px 0;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f2f5ff;
+  border: 1px solid rgba(45, 108, 223, 0.15);
+  padding: 8px 10px;
+  border-radius: 10px;
+  min-width: 260px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 0.97rem;
+  color: #1f2a44;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(31, 42, 68, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(22, 34, 66, 0.1);
+  margin-bottom: 14px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  background: linear-gradient(135deg, #2d6cdf, #1f5ac4);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(45, 108, 223, 0.35);
+}
+
+.ghost {
+  background: #f1f4fb;
+  color: #1f2a44;
+  border: 1px solid rgba(31, 42, 68, 0.08);
+}
+
+.danger {
+  background: #ff6b6b;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.35);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.field span {
+  color: #2d3e63;
+  font-weight: 600;
+}
+
+.field input {
+  border: 1px solid rgba(31, 42, 68, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  background: #f8f9fc;
+  color: #1f2a44;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+th {
+  color: #2d3e63;
+  border-bottom: 1px solid rgba(31, 42, 68, 0.08);
+}
+
+tbody tr + tr td {
+  border-top: 1px solid rgba(31, 42, 68, 0.06);
+}
+
+tbody tr:hover {
+  background: rgba(45, 108, 223, 0.05);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.actions-col {
+  width: 160px;
+}
+
+.hint {
+  margin: 12px 0 0;
+  color: #2d6cdf;
+  font-size: 0.95rem;
+}
+
+.alert {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.alert.success {
+  background: rgba(76, 175, 80, 0.15);
+  color: #1b5e20;
+  border: 1px solid rgba(76, 175, 80, 0.35);
+}
+
+.alert.error {
+  background: rgba(244, 67, 54, 0.12);
+  color: #b01414;
+  border: 1px solid rgba(244, 67, 54, 0.25);
+}
+
+code {
+  background: rgba(45, 108, 223, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: #1d3a73;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 20px 12px;
+  }
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .actions-col {
+    width: auto;
+  }
+}
